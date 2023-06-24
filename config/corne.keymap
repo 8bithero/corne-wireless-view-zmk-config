@@ -68,11 +68,13 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-       &kp TAB  &kp Q  &kp W     &kp E  &kp R      &kp T      &kp Y  &kp U      &kp I    &kp O     &kp P  &kp BSPC
-     &kp LCTRL  &kp A  &kp S     &kp D  &kp F      &kp G      &kp H  &kp J      &kp K    &kp L  &kp SEMI   &kp SQT
-&kp LEFT_SHIFT  &kp Z  &kp X     &kp C  &kp V      &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH   &kp ESC
+       &kp TAB  &kp Q  &kp D     &kp R  &kp W      &kp B      &kp J  &kp F      &kp U    &kp P  &kp SEMI  &kp BSPC
+     &kp LCTRL  &kp A  &kp S     &kp H  &kp T      &kp G      &kp Y  &kp N      &kp E    &kp O     &kp I   &kp SQT
+&kp LEFT_SHIFT  &kp Z  &kp X     &kp M  &kp C      &kp V      &kp K  &kp L  &kp COMMA  &kp DOT  &kp FSLH   &kp ESC
                               &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2   &kp RALT
             >;
+
+            label = "Default";
         };
 
         lower_layer {
@@ -89,7 +91,7 @@
                             &trans    &trans     &trans       &trans      &mo 3           &trans
             >;
 
-            label = "Symbols";
+            label = "Sym";
         };
 
         raise_layer {
@@ -133,6 +135,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &kp KP_N1  &kp KP_N2  &kp KP_N3             &kp KP_N0        &kp KP_SUBTRACT      &kp KP_PLUS
                         &trans  &trans  &trans       &trans     &trans     &trans
             >;
+
+            label = "Num";
         };
     };
 };
