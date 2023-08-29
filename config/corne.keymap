@@ -114,10 +114,10 @@
             //                    └─────┴─────┴─────┘      └─────┴─────┴─────┘
 
             bindings = <
-                 &trans                 &kp EXCL                   &kp AT                 &kp HASH                 &kp DLLR                &kp PRCNT    &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR    &kp DEL
-&kp LA(LC(KP_NUMBER_7))  &kp LA(LC(KP_NUMBER_8))  &kp LA(LC(KP_NUMBER_9))  &kp LA(LC(KP_NUMBER_1))  &kp LA(LC(KP_NUMBER_2))  &kp LA(LC(KP_NUMBER_3))    &kp MINUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-                 &trans                   &trans  &kp LA(LC(KP_NUMBER_0))  &kp LA(LC(KP_NUMBER_4))  &kp LA(LC(KP_NUMBER_5))   &kp LA(LC(LANGUAGE_6))    &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                                                                                            &trans                   &trans                   &trans       &trans      &mo 3           &trans
+              &trans              &kp EXCL                &kp AT              &kp HASH              &kp DLLR             &kp PRCNT    &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR    &kp DEL
+&kp LA(LC(NUMBER_7))  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))  &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+              &trans                &trans  &kp LA(LC(NUMBER_0))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+                                                                                &trans                &trans                &trans       &trans      &mo 3           &trans
             >;
 
             label = "Sym";
