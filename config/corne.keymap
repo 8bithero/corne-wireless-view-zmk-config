@@ -155,10 +155,10 @@
 
             label = "Base";
             bindings = <
-&kp TAB         &kp Q  &kp D  &kp R            &kp W        &kp B        &kp J    &kp F        &kp U      &kp P    &kp SEMI  &kp BSPC
-&kp LCTRL       &kp A  &kp S  &hml LEFT_ALT H  &hml LGUI T  &kp G        &kp Y    &hmr RCMD N  &kp E      &kp O    &kp I     &kp SQT
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp M            &kp C        &kp V        &kp K    &kp L        &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                              &kp LGUI         &mo 1        &kp SPACE    &kp RET  &mo 2        &kp RALT
+&kp TAB         &kp Q         &kp D         &kp R            &kp W        &kp B        &kp J    &kp F        &kp U        &kp P         &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
+&kp LCTRL       &hml LSHFT A  &hml LCTRL S  &hml LEFT_ALT H  &hml LGUI T  &kp G        &kp Y    &hmr RCMD N  &hmr RALT E  &hmr RCTRL O  &hmr RSHFT I                 &kp SQT
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp M            &kp C        &kp V        &kp K    &kp L        &kp COMMA    &kp DOT       &kp FSLH                     &kp ESC
+                                            &kp LGUI         &mo 1        &kp SPACE    &kp RET  &mo 2        &kp RALT
             >;
         };
 
@@ -213,7 +213,7 @@
             bindings = <
 &trans             &pscrn_full   &pscrn_crop   &pscrn_window  &pscrn_drag   &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&ext_power EP_TOG  &trans        &trans        &trans         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&ext_power EP_TOG  &bootloader   &trans        &trans         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &kp K_POWER
                                                &trans         &trans        &trans          &trans  &trans  &trans
             >;
         };
