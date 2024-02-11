@@ -52,6 +52,24 @@
             bindings = <&kp C_BRIGHTNESS_DEC>;
             key-positions = <1 2>;
         };
+
+        window_right_half {
+            bindings = <&kp LC(LA(RIGHT))>;
+            key-positions = <17 16>;
+            layers = <1>;
+        };
+
+        window_left_half {
+            bindings = <&kp LC(LA(LEFT))>;
+            key-positions = <16 15>;
+            layers = <1>;
+        };
+
+        window_center {
+            bindings = <&kp LC(LA(C))>;
+            key-positions = <16 15 17>;
+            layers = <1>;
+        };
     };
 
     behaviors {
