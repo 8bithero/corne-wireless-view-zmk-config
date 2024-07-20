@@ -66,9 +66,29 @@
         };
 
         window_center {
-            bindings = <&kp LC(LA(C))>;
+            bindings = <&kp LC(LA(LS(E)))>;
             key-positions = <16 15 17>;
             layers = <1>;
+        };
+
+        first_two_thirds {
+            bindings = <&kp LC(LA(LS(N)))>;
+            key-positions = <12 13>;
+        };
+
+        last_two_thirds {
+            bindings = <&kp LC(LA(LS(O)))>;
+            key-positions = <13 14>;
+        };
+
+        first_three_fourths {
+            bindings = <&kp LC(LA(LS(L)))>;
+            key-positions = <24 25>;
+        };
+
+        last_three_fourths {
+            bindings = <&kp LC(LA(LS(SLASH)))>;
+            key-positions = <25 26>;
         };
     };
 
@@ -190,10 +210,10 @@
 
             label = "Sym";
             bindings = <
-&kp LS(LA(LC(UP_ARROW)))  &kp EXCL              &kp AT                &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DEL
-&kp LA(LC(NUMBER_7))      &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))  &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&trans                    &trans                &kp LA(LC(NUMBER_0))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                                                      &trans                &trans                &trans                  &trans     &mo 3      &trans
+&kp LC(LA(GRAVE))  &kp EXCL                &kp AT             &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DEL
+&kp LC(LA(N))      &kp LC(LA(UP_ARROW))    &kp LC(LA(O))      &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LC(LA(L))      &kp LC(LA(DOWN_ARROW))  &kp LC(LA(SLASH))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                                                              &trans                &trans                &trans                  &trans     &mo 3      &trans
             >;
         };
 
@@ -207,10 +227,10 @@
 
             label = "Nav";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6             &kp N7         &kp N8     &kp N9               &kp N0  &kp DEL
-&trans  &trans  &trans  &trans  &trans  &trans    &mt RA(LEFT) LEFT  &kp DOWN       &kp UP     &mt RA(RIGHT) RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME           &kp PAGE_DOWN  &kp PG_UP  &kp END              &trans  &trans
-                        &mo 5   &mo 3   &trans    &trans             &trans         &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6             &kp N7       &kp N8         &kp N9               &kp N0  &kp DEL
+&trans  &trans  &trans  &trans  &trans  &trans    &mt RA(LEFT) LEFT  &kp DOWN     &kp UP         &mt RA(RIGHT) RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME           &kp PAGE_UP  &kp PAGE_DOWN  &kp END              &trans  &trans
+                        &mo 5   &mo 3   &trans    &trans             &trans       &trans
             >;
         };
 
