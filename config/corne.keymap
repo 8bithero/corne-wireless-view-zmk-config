@@ -102,17 +102,17 @@
             tapping-term-ms = <190>;
         };
 
-        hml: homewrow_mods_left {
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT_HAND";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>, <&as>;
 
             #binding-cells = <2>;
             tapping-term-ms = <220>;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
         };
 
-        hmr: homewrow_mods_right {
+        hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_RIGHT_HAND";
             bindings = <&kp>, <&kp>;
@@ -178,6 +178,48 @@
 
             label = "AUTOSHIFT_KEYPRESS";
         };
+
+        bottom_half: bottom_half {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DOWN_ARROW))>;
+            label = "BOTTOM_HALF";
+        };
+
+        top_half: top_half {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(UP_ARROW))>;
+            label = "TOP_HALF";
+        };
+
+        first_third: first_third {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(N))>;
+            label = "FIRST_THIRD";
+        };
+
+        last_third: last_third {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(O))>;
+            label = "LAST_THIRD";
+        };
+
+        first_fourth: first_fourth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(L))>;
+            label = "FIRST_FOURTH";
+        };
+
+        last_fourth: last_fourth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(SLASH))>;
+            label = "LAST_FOURTH";
+        };
     };
 
     keymap {
@@ -193,10 +235,10 @@
 
             label = "Base";
             bindings = <
-&kp TAB    &kp Q         &kp D        &kp R        &kp W         &kp B        &kp J    &kp F         &kp U        &kp P        &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
-&kp LCTRL  &hml LCTRL A  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp G        &kp Y    &hmr RSHFT N  &hmr RGUI E  &hmr RALT O  &hml RCTRL I                 &kp SQT
-&kp LSHFT  &kp Z         &kp X        &kp M        &kp C         &kp V        &kp K    &kp L         &kp COMMA    &kp DOT      &kp FSLH                     &kp ESC
-                                      &kp LGUI     &mo 1         &kp SPACE    &kp RET  &mo 2         &kp RALT
+&kp TAB          &as Q         &as D        &as R        &as W         &as B        &as J    &as F         &as U        &as P        &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
+&kp LCTRL        &hml LCTRL A  &hml LALT S  &hml LGUI H  &hml LSHFT T  &as G        &as Y    &hmr RSHFT N  &hmr RGUI E  &hmr RALT O  &hmr RCTRL I                 &kp SQT
+&mt LSHIFT CAPS  &as Z         &as X        &as M        &as C         &as V        &as K    &as L         &kp COMMA    &kp DOT      &kp FSLH                     &kp ESC
+                                            &kp LGUI     &mo 1         &kp SPACE    &kp RET  &mo 2         &kp RALT
             >;
         };
 
@@ -210,10 +252,10 @@
 
             label = "Sym";
             bindings = <
-&kp LC(LA(GRAVE))  &kp EXCL                &kp AT             &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DEL
-&kp LC(LA(N))      &kp LC(LA(UP_ARROW))    &kp LC(LA(O))      &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LC(LA(L))      &kp LC(LA(DOWN_ARROW))  &kp LC(LA(SLASH))  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                                              &trans                &trans                &trans                  &trans     &mo 3      &trans
+&kp LC(LA(GRAVE))  &kp EXCL      &kp AT        &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp DEL
+&first_third       &top_half     &last_third   &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH      &kp GRAVE
+&first_fourth      &bottom_half  &last_fourth  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE      &kp TILDE
+                                               &trans                &trans                &trans                  &trans     &mo 3      &trans
             >;
         };
 
@@ -227,10 +269,10 @@
 
             label = "Nav";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6             &kp N7       &kp N8         &kp N9               &kp N0  &kp DEL
-&trans  &trans  &trans  &trans  &trans  &trans    &mt RA(LEFT) LEFT  &kp DOWN     &kp UP         &mt RA(RIGHT) RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME           &kp PAGE_UP  &kp PAGE_DOWN  &kp END              &trans  &trans
-                        &mo 5   &mo 3   &trans    &trans             &trans       &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7                   &kp N8          &kp N9        &kp N0               &kp DEL
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &mt RA(LEFT_ARROW) LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &mt RA(RIGHT) RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp PAGE_UP              &kp PAGE_DOWN   &kp END       &trans               &trans
+                        &mo 5   &mo 3   &trans    &trans    &trans                   &trans
             >;
         };
 
@@ -249,7 +291,7 @@
 
             label = "Util";
             bindings = <
-&trans             &pscrn_full   &pscrn_crop   &pscrn_window  &pscrn_drag   &trans          &trans       &trans  &trans  &trans  &trans  &trans
+&trans             &pscrn_full   &pscrn_crop   &pscrn_window  &pscrn_drag   &trans          &trans       &trans  &trans  &trans  &trans  &kp C_SLEEP
 &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4    &trans       &trans  &trans  &trans  &trans  &trans
 &ext_power EP_TOG  &trans        &trans        &trans         &trans        &bootloader     &bootloader  &trans  &trans  &trans  &trans  &kp K_POWER
                                                &trans         &trans        &trans          &trans       &trans  &trans
