@@ -105,7 +105,7 @@
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT_HAND";
-            bindings = <&kp>, <&as>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <220>;
@@ -235,10 +235,10 @@
 
             label = "Base";
             bindings = <
-&kp TAB          &as Q         &as D        &as R        &as W         &as B        &as J    &as F         &as U        &as P        &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
-&kp LCTRL        &hml LCTRL A  &hml LALT S  &hml LGUI H  &hml LSHFT T  &as G        &as Y    &hmr RSHFT N  &hmr RGUI E  &hmr RALT O  &hmr RCTRL I                 &kp SQT
-&mt LSHIFT CAPS  &as Z         &as X        &as M        &as C         &as V        &as K    &as L         &kp COMMA    &kp DOT      &kp FSLH                     &kp ESC
-                                            &kp LGUI     &mo 1         &kp SPACE    &kp RET  &mo 2         &kp RALT
+&kp TAB          &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
+&kp LCTRL        &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                        &kp SQT
+&mt LSHIFT CAPS  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH                     &kp ESC
+                               &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
 
