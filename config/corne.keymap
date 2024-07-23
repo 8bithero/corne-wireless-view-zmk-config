@@ -73,22 +73,22 @@
 
         first_two_thirds {
             bindings = <&kp LC(LA(LS(N)))>;
-            key-positions = <12 13>;
+            key-positions = <27 28>;
         };
 
         last_two_thirds {
             bindings = <&kp LC(LA(LS(O)))>;
-            key-positions = <13 14>;
+            key-positions = <28 29>;
         };
 
         first_three_fourths {
             bindings = <&kp LC(LA(LS(L)))>;
-            key-positions = <24 25>;
+            key-positions = <12 13>;
         };
 
         last_three_fourths {
             bindings = <&kp LC(LA(LS(SLASH)))>;
-            key-positions = <25 26>;
+            key-positions = <13 14>;
         };
     };
 
@@ -120,6 +120,16 @@
             #binding-cells = <2>;
             tapping-term-ms = <220>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+
+        emojis: emojis {
+            compatible = "zmk,behavior-hold-tap";
+            label = "EMOJIS";
+            bindings = <&emoji_list>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
         };
     };
 
@@ -179,46 +189,60 @@
             label = "AUTOSHIFT_KEYPRESS";
         };
 
-        bottom_half: bottom_half {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(DOWN_ARROW))>;
-            label = "BOTTOM_HALF";
-        };
-
-        top_half: top_half {
+        tile_half_t: bottom_half {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(UP_ARROW))>;
+            label = "BOTTOM_HALF";
+        };
+
+        tile_half_b: top_half {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DOWN_ARROW))>;
             label = "TOP_HALF";
         };
 
-        first_third: first_third {
+        tile_1_3: first_third {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(N))>;
             label = "FIRST_THIRD";
         };
 
-        last_third: last_third {
+        tile_3_3: last_third {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(O))>;
             label = "LAST_THIRD";
         };
 
-        first_fourth: first_fourth {
+        tile_1_4: first_fourth {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(L))>;
             label = "FIRST_FOURTH";
         };
 
-        last_fourth: last_fourth {
+        tile_4_4: last_fourth {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(SLASH))>;
             label = "LAST_FOURTH";
+        };
+
+        emoji_list: emojis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(SPACE))>;
+            label = "EMOJIS";
+        };
+
+        tile_max_h: max_height {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(GRAVE))>;
+            label = "MAX_HEIGHT";
         };
     };
 
@@ -235,9 +259,9 @@
 
             label = "Base";
             bindings = <
-&kp TAB              &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
-&kp LCTRL            &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                        &kp SQT
-&mt LSHIFT CAPSLOCK  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH                     &kp ESC
+&kp TAB              &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &emojis 0 SEMICOLON  &kp BSPC
+&kp LCTRL            &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                &kp SQT
+&mt LSHIFT CAPSLOCK  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH             &kp ESC
                                    &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
@@ -252,10 +276,10 @@
 
             label = "Sym";
             bindings = <
-&kp LC(LA(GRAVE))  &kp EXCL      &kp AT        &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp DEL
-&first_third       &top_half     &last_third   &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH      &kp GRAVE
-&first_fourth      &bottom_half  &last_fourth  &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE      &kp TILDE
-                                               &trans                &trans                &trans                  &trans     &mo 3      &trans
+&tile_max_h  &kp EXCL      &kp AT     &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp DEL
+&tile_1_4    &tile_half_t  &tile_4_4  &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH      &kp SINGLE_QUOTE
+&trans       &tile_half_b  &trans     &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE      &kp TILDE
+                                      &trans                &trans                &trans                  &trans     &mo 3      &trans
             >;
         };
 
