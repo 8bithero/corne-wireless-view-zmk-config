@@ -121,16 +121,6 @@
             tapping-term-ms = <220>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
         };
-
-        emojis: emojis {
-            compatible = "zmk,behavior-hold-tap";
-            label = "EMOJIS";
-            bindings = <&emoji_list>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-        };
     };
 
     macros {
@@ -231,13 +221,6 @@
             label = "LAST_FOURTH";
         };
 
-        emoji_list: emojis {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LG(SPACE))>;
-            label = "EMOJIS";
-        };
-
         tile_max_h: max_height {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -259,9 +242,9 @@
 
             label = "Base";
             bindings = <
-&kp TAB              &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &emojis 0 SEMICOLON  &kp BSPC
-&kp LCTRL            &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                &kp GRAVE
-&mt LSHIFT CAPSLOCK  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH             &kp ESC
+&kp TAB              &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
+&kp LCTRL            &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                        &kp GRAVE
+&mt LSHIFT CAPSLOCK  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH                     &kp ESC
                                    &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
