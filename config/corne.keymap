@@ -128,8 +128,8 @@
             bindings = <&emoji_list>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <220>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
         };
     };
 
