@@ -121,6 +121,15 @@
             tapping-term-ms = <220>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
         };
+
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -242,9 +251,9 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB              &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &mt LC(LG(SPACE)) SEMICOLON  &kp BSPC
-&kp LCTRL            &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                        &kp GRAVE
-&mt LSHIFT CAPSLOCK  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH                     &kp ESC
+&kp TAB              &kp Q  &kp D  &kp R     &kp W  &kp B        &kp J    &kp F  &kp U      &kp P    &mt LC(LG(SPACE)) SEMICOLON  &bspc_del
+&kp LCTRL            &kp A  &kp S  &kp H     &kp T  &kp G        &kp Y    &kp N  &kp E      &kp O    &kp I                        &kp APOSTROPHE
+&mt LSHIFT CAPSLOCK  &kp Z  &kp X  &kp M     &kp C  &kp V        &kp K    &kp L  &kp COMMA  &kp DOT  &kp FSLH                     &gresc
                                    &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
@@ -259,9 +268,9 @@
 
             display-name = "Sym";
             bindings = <
-&tile_max_h  &kp EXCL      &kp AT     &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp DEL
-&tile_1_4    &tile_half_t  &tile_4_4  &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH      &kp SINGLE_QUOTE
-&trans       &tile_half_b  &trans     &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE      &kp TILDE
+&tile_max_h  &kp EXCL      &kp AT     &kp HASH              &kp DLLR              &kp PRCNT               &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&tile_1_4    &tile_half_t  &tile_4_4  &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))    &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT              &kp RBKT               &kp TILDE
+&trans       &tile_half_b  &trans     &kp LA(LC(NUMBER_4))  &kp LA(LC(NUMBER_5))  &kp LA(LC(NUMBER_6))    &kp UNDER  &kp PLUS   &kp PIPE   &kp LBRC              &kp RBRC               &trans
                                       &trans                &trans                &trans                  &trans     &mo 3      &trans
             >;
         };
@@ -276,7 +285,7 @@
 
             display-name = "Nav";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7                   &kp N8          &kp N9        &kp N0               &kp DEL
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7                   &kp N8          &kp N9        &kp N0               &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &mt RA(LEFT_ARROW) LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &mt RA(RIGHT) RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME                 &kp PAGE_DOWN   &kp PAGE_UP   &kp END              &trans
                         &mo 5   &mo 3   &trans    &trans  &trans                   &trans
